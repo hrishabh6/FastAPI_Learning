@@ -14,10 +14,21 @@
 #3. description - str - description of the task
 
 
+#List of external packages we will use
+#1. FastAPI - to create the api
+#2. SQLAlchemy - to interact with the database
+#3. Pydantic - to validate the request and response body
+#4. MySQL - to store the data
+#5. Uvicorn - to run the api server
+
+#Combined pip command to install all the packages
+# pip install fastapi sqlalchemy pydantic pymysql uvicorn
+
+
 from fastapi import FastAPI, Depends
 from typing import List
 from sqlalchemy.orm import Session
-from config.Database import SessionLocal, engine
+from config.Database import SessionLocal
 from models.todo import Task
 from dtos.taskRequest import TaskCreate
 from dtos.taskResponse import TaskResponse
